@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  media_player:
+    image: media_player
+    build:
+      context: media_player
+      dockerfile: Dockerfile
+    #TODO: Check the ports with the webserver
+    #ports:
+    #  - 8000:5000
+    volumes:
+      - ./code:/app
