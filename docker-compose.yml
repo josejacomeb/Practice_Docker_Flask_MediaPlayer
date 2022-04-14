@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  video-stream:
+    build:
+      context: stream
+    volumes:
+      - ${TEST_VIDEO_FOLDER}:${DOCKER_VIDEO_FOLDER}
+    environment:
+      - DOCKER_VIDEO_FOLDER=${DOCKER_VIDEO_FOLDER}
+    #TODO: Check the ports with the webserver
+    #ports:
+    #  - 8000:5000
+  redis:
+    image: "redis:alpine"
