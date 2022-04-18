@@ -1,5 +1,5 @@
 # Practice_Docker_Flask_MediaPlayer
-Program to practice the Docker platform, along with the Flask, OpenCV, Redis, Tesseract and Mosquitto libraries for transmitting image data to a webserver 
+Program to practice the Docker platform, along with the Flask, OpenCV, Redis, Tesseract and Mosquitto libraries for transmitting image data to a webserver
 
 Images generated with Docker's BuildKit, example of generation
 
@@ -43,7 +43,7 @@ DOCKER_BUILDKIT=1 docker build --tag media_player .
 ```
 
 ## TODO
-- [X] ~Build a Media Player Class with OpenCV~ 
+- [X] ~Build a Media Player Class with OpenCV~
 - [ ] Develop a Flask Web server to show the data of the video
 - [ ] Use Mosquitto to interchange information between OpenCV and Flask
 - [ ] Use a DB to ask for user's access

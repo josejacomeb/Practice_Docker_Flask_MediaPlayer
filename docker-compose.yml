@@ -11,5 +11,16 @@ services:
     #TODO: Check the ports with the webserver
     #ports:
     #  - 8000:5000
+  web-server:
+    build: server
+    environment:
+      - FLASK_APP=${FLASK_APP}
+      - FLASK_ENV=${FLASK_ENV}
+      - FLASK_DEBUG=${FLASK_DEBUG}
+      - FLASK_RUN_HOST=${FLASK_RUN_HOST}
+      - FLASK_RUN_PORT=${FLASK_RUN_PORT}
+    ports:
+      - ${FLASK_RUN_PORT}:${FLASK_RUN_PORT}
+
   redis:
     image: "redis:alpine"

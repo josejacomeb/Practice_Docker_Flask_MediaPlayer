@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import logging
-import os
 
 import cv2
 
@@ -9,24 +8,28 @@ logging.basicConfig()
 logger = logging.getLogger("MediaPlayer")
 logger.setLevel(logging.DEBUG)
 
+
 class MediaPlayer:
     """
-        Class to read a videofile
+    Class to read a videofile
     """
-    loop = False #Loop the video
-    playing = False #Playing the video
+
+    loop = False  # Loop the video
+    playing = False  # Playing the video
     stopped = False
-    cap = None #OpenCV object to handle video streams
-    frame_count = 0 #0-based index object of the object
-    total_frames = 0 #Total frames of the object
+    cap = None  # OpenCV object to handle video streams
+    frame_count = 0  # 0-based index object of the object
+    total_frames = 0  # Total frames of the object
+
     def __init__(self, source):
         self.source = source
         self.loop = False
         self.setup(self.source)
 
     """
-        Setups a new instance of the cap 
+        Setups a new instance of the cap
     """
+
     def setup(self, source):
         self.cap = cv2.VideoCapture(source)
         self.stopped = False
@@ -36,18 +39,23 @@ class MediaPlayer:
     """
         Get the position a 0-based index position of the frame in the cap object
     """
+
     def _get_frame_position(self):
         return self.cap.get(cv2.CAP_PROP_POS_FRAMES)
+
     """
         Set the position of the video
     """
+
     def _set_frame_position(self, index):
         val = self.cap.set(cv2.CAP_PROP_POS_FRAMES, index)
         if not val:
-            logger.warning(f"Set to the video {self.source} to the index {index} failed")
+            logger.warning(
+                f"Set to the video {self.source} to the index {index} failed"
+            )
         else:
             self.frame_count = self._get_frame_position()
-        #TODO Establish an exception for out of range index
+        # TODO Establish an exception for out of range index
 
     def get_frame(self):
         self.frame_count = self._get_frame_position()
@@ -59,15 +67,17 @@ class MediaPlayer:
         else:
             logger.info("Video stopped")
             self.stopped = True
+
     """
         Backwards the video index by 1
     """
+
     def fast_backwards(self):
         self._set_frame_position(self.frame_count - 1)
 
     """
         Forward the video index by 1
     """
+
     def fast_forward(self):
         self._set_frame_position(self.frame_count + 1)
-
