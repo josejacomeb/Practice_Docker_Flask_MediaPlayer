@@ -37,6 +37,7 @@ class MediaPlayer:
         self.stopped = False
         self.total_frames = self.cap.get(cv2.CAP_PROP_FRAME_COUNT)
         self.frame_count = 0
+        print("Finishing to setup this specific part of code, hope Black formatter doesn't complain")
 
     """
         Get the position a 0-based index position of the frame in the cap object
