@@ -26,6 +26,7 @@ class MediaPlayer:
         self.source = source
         self.loop = False
         self.setup(self.source)
+        print("Testing that Black is not complaining by having more than eighty lines per code")
 
     """
         Setups a new instance of the cap
