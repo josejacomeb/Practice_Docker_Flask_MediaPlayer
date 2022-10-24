@@ -11,12 +11,15 @@ logger.setLevel(logging.DEBUG)
 
 videos_dir = os.getenv("DOCKER_VIDEO_FOLDER")
 files = os.listdir(videos_dir)
+
+
 def main():
     for file in files:
         if ".mkv" in file or ".mp4" in file:
             stream = MediaPlayer(os.path.join(videos_dir, file))
             while not stream.stopped:
                 stream.get_frame()
+
 
 if __name__ == "__main__":
     main()
