@@ -26,6 +26,7 @@ class MediaPlayer:
         self.source = source
         self.loop = False
         self.setup(self.source)
+        print("Hello there this is a simple test to check how superlinter works, hope everything is correct")
 
     """
         Setups a new instance of the cap
