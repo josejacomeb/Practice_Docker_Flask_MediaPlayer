@@ -10,6 +10,7 @@ logger = logging.getLogger("MediaPlayer")
 logger.setLevel(logging.DEBUG)
 
 videos_dir = os.getenv("DOCKER_VIDEO_FOLDER")
+print("Hello there this is a simple test to check how superlinter works, hope everything is correct")
 files = os.listdir(videos_dir)
 
 
