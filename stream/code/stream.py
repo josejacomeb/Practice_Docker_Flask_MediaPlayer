@@ -9,7 +9,7 @@ logger = logging.getLogger("MediaPlayer")
 logger.setLevel(logging.DEBUG)
 
 
-class MediaPlayer:
+class mediaPlayer:
     """
     Class to read a videofile
     """
@@ -20,7 +20,23 @@ class MediaPlayer:
     cap = None  # OpenCV object to handle video streams
     frame_count = 0  # 0-based index object of the object
     total_frames = 0  # Total frames of the object
-    very_long_dictionary = {"a": 0, "b": 1, "c": 2, "d": 3, "e": 4, "f": 5, "g": 6, "h": 7, "i": 8, "j": 9}
+    very_long_dictionary = {
+        "a": 0,
+        "b": 1,
+        "c": 2,
+        "d": 3,
+        "e": 4,
+        "f": 5,
+        "g": 6,
+        "h": 7,
+        "i": 8,
+        "j": 9,
+        "k": 9,
+        "l": 9,
+    }
+
+    def camelCaseFunction(self):
+        pass
 
     def __init__(self, source):
         self.source = source
