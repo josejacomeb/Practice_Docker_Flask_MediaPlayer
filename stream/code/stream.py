@@ -34,6 +34,7 @@ class mediaPlayer:
         "k": 9,
         "l": 9,
     }
+
     def camelCaseFunction(self):
         pass
 
